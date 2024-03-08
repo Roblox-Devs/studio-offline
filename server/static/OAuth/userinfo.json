@@ -1,0 +1,13 @@
+{
+    "sub": "1",
+    "name": "ROBLOX",
+    "nickname": "ROBLOX",
+    "preferred_username": "ROBLOX",
+    "created_at": 1,
+    "profile": "https://www.roblox.com/users/1/profile",
+    "picture": "http://localhost/headshots/default.png",
+    "age_bracket": "Age13OrOver",
+    "premium": false,
+    "roles": [],
+    "internal_user": false
+}

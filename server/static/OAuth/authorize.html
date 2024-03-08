@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Offline Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #212529;
+            /* Dark mode background */
+            color: #fff;
+            /* Light text for dark background */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #30363b;
+            /* Darker container background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* Adjust shadow for dark mode */
+        }
+
+        h1 {
+            color: inherit;
+            /* Inherit text color from body */
+        }
+
+        button {
+            background-color: #4CAF50;
+            /* Maintain green button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .dark-mode-toggle {
+            margin-top: 20px;
+            color: #fff;
+            /* Light text for dark mode */
+        }
+
+        #dark-mode-checkbox:checked~body {
+            background-color: #f2f2f2;
+            /* Light mode background */
+            color: #333;
+            /* Dark text for light background */
+        }
+
+        #dark-mode-checkbox:checked~.container {
+            background-color: #fff;
+            /* Lighter container background in light mode */
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Studio Offline Login</h1>
+        <p>You are on the Studio Offline login page. To login, click the button below.</p>
+        <button onclick="redirectToRobloxStudio()">Login</button>
+    </div>
+    <footer>
+        <p>Made by Stan. Thanks to Chris for the hook help.</p>
+    </footer>
+
+    <script>
+        function redirectToRobloxStudio() {
+            let params = (new URL(document.location)).searchParams;
+            let name = params.get("state");
+            window.location.href = "roblox-studio-auth:/?code=a&state=" + name;
+        }
+    </script>
+
+</body>
+
+</html>

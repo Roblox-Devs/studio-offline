@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "gameTemplateType": "Generic",
+            "hasTutorials": false,
+            "universe": {
+                "id": 95206881,
+                "name": "Baseplate",
+                "description": null,
+                "isArchived": false,
+                "rootPlaceId": 95206881,
+                "isActive": true,
+                "privacyType": "Public",
+                "creatorType": "User",
+                "creatorTargetId": 1,
+                "creatorName": "ROBLOX",
+                "created": "2013-11-01T08:47:14.07Z",
+                "updated": "2023-05-02T22:03:01.107Z"
+            }
+        }
+    ]
+}

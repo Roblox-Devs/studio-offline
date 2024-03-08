@@ -1,0 +1,72 @@
+{
+    "results": [
+        {
+            "name": "studio-plugin-deployment",
+            "content": {
+                "data": {
+                    "Toolbox": {
+                        "pluginAssetId": 10525953450,
+                        "isStandalone": false,
+                        "deployments": {
+                            "0.570.0.5700563": {
+                                "assetVersion": 57,
+                                "pluginVersion": 53,
+                                "maxStudioVersion": 571
+                            },
+                            "0.603.0.6030563": {
+                                "assetVersion": 94,
+                                "pluginVersion": 135,
+                                "maxStudioVersion": 604
+                            },
+                            "0.607.0.6070550": {
+                                "assetVersion": 96,
+                                "pluginVersion": 139,
+                                "maxStudioVersion": 608
+                            }
+                        }
+                    },
+                    "CollisionGroupsEditor": {
+                        "pluginAssetId": 13354080692,
+                        "isStandalone": true,
+                        "deployments": {
+                            "0.574.0.5740446": {
+                                "assetVersion": 4,
+                                "pluginVersion": 87,
+                                "maxStudioVersion": 575
+                            }
+                        }
+                    },
+                    "AvatarCompatibilityPreviewer": {
+                        "pluginAssetId": 14768093112,
+                        "isStandalone": false,
+                        "deployments": {
+                            "0.604.0.6040509": {
+                                "assetVersion": 2,
+                                "pluginVersion": 136,
+                                "maxStudioVersion": 605
+                            },
+                            "0.605.0.6050654": {
+                                "assetVersion": 3,
+                                "pluginVersion": 137,
+                                "maxStudioVersion": 606
+                            }
+                        }
+                    },
+                    "AssetImporter": {
+                        "pluginAssetId": 14363959291,
+                        "isStandalone": false,
+                        "deployments": {
+                            "0.615.0.6150606": {
+                                "assetVersion": 2,
+                                "pluginVersion": 140,
+                                "maxStudioVersion": 616
+                            }
+                        }
+                    }
+                },
+                "schemaVersion": 1
+            },
+            "errorCode": 0
+        }
+    ]
+}

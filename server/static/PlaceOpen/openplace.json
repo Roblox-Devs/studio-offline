@@ -1,0 +1,20 @@
+{
+    "universe": {
+        "Id": 1,
+        "RootPlaceId": 95206881,
+        "Name": "Roblox Studio Offline",
+        "IsArchived": false,
+        "CreatorType": "User",
+        "CreatorTargetId": 1,
+        "PrivacyType": "Public",
+        "Created": "2024-03-07T08:47:14.07+00:00",
+        "Updated": "2012-04-01T22:03:01.107+00:00"
+    },
+    "teamCreateEnabled": false,
+    "place": {
+        "Creator": {
+            "CreatorType": "User",
+            "CreatorTargetId": 1
+        }
+    }
+}

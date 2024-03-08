@@ -1,0 +1,26 @@
+#pragma once
+
+class Pattern {
+public:
+    const char* pattern;
+    const char* mask;
+
+    Pattern(const char* pattern, const char* mask)
+        : pattern(pattern), mask(mask) {};
+};
+
+namespace patterns {
+    
+    const auto url_oncomponent = Pattern(
+       "\x48\x89\x5C\x24\x18\x4C\x89\x4C\x24\x20\x48\x89\x4C\x24\x08\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8B\xEC\x48\x83\xEC\x60", 
+       "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    );
+    const auto trustcheck = Pattern(
+        "\x48\x89\x5C\x24\x08\x48\x89\x74\x24\x10\x48\x89\x7C\x24\x18\x55\x41\x56\x41\x57\x48\x8D\xAC\x24\x10\xFF\xFF\xFF\x48\x81\xEC\xF0\x01\x00\x00\x45", 
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    );
+    const auto HttpRequestURL = Pattern(
+        "\x48\x89\x74\x24\x10\x57\x48\x83\xEC\x40\x48\x8B\xFA\x48\x8B\xF1\xE8",
+        "xxxxxxxxxxxxxxxxx"
+    );
+}
