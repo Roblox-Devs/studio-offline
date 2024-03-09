@@ -4,7 +4,7 @@ An easy way to use ROBLOX Studio Offline without any internet connection or GUAC
 1. [NodeJS](https://nodejs.org)
 
 ## Installing
-1. Download the [latest release here]([https://github](https://github.com/Roblox-Devs/studio-offline/releases/latest))
+1. Download the [latest release here](https://github.com/Roblox-Devs/studio-offline/releases/latest)
 2. Go to your ROBLOX Studio installation and rename the DLL ``WebView2Loader.dll`` to ``WebView2LoaderOld.dll``
 3. Drag and drop the two DLL's present in the ``client`` folder of the latest release to your ROBLOX Studio installation
 4. Make a file named ``OFFLINE_STUDIO`` with no file extension, this will tell Studio-Offline you want to launch it.
