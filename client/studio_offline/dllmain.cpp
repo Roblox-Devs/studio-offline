@@ -29,6 +29,7 @@ void hook_test(uint128_t* res, uintptr_t schema, uintptr_t host, uintptr_t path,
     const auto host_str = reinterpret_cast<const char*>(
         *reinterpret_cast<uintptr_t*>(host)
         );
+    printf("%s %s\n", host_str, path);
     const char* str = "localhost";
     const char* scheme_str = "http";
     *reinterpret_cast<uintptr_t*>(host) = reinterpret_cast<uintptr_t>(str);
@@ -59,9 +60,10 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     {
         bool offline_enabled = std::filesystem::exists("OFFLINE_STUDIO");
         if (offline_enabled) {
+	    FILE* f;
             AllocConsole();
-            freopen("CONIN$", "r", stdin);
-            freopen("CONOUT$", "w", stdout);
+            freopen_s(&f, "CONIN$", "r", stdin);
+            freopen_s(&f, "CONOUT$", "w", stdout);
             printf("Starting Studio-Offline\n");
             const auto addr = aob_scan(patterns::url_oncomponent);
             const auto trustcheck_addr = aob_scan(patterns::trustcheck);

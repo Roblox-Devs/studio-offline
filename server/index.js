@@ -80,13 +80,16 @@ app.get("/v1/asset", (req, res) => {
   const id = req.query.id;
   let fileFound = false;
   if (reflection) {
-    res.redirect(`https://assetdelivery.roblox.com/v1/asset/?id=${id}`);
+    res.redirect(`https://assetdelivery.roblox.com/v1/asset/?id=${id}&permissionContext=ignoreUniverse&xcachesplit=0`);
   }
   if (assetGrab) {
     axios({
       method: "get",
-      url: "https://assetdelivery.roblox.com/v1/asset/?id=" + id,
-      responseType: "stream"
+      url: "https://assetdelivery.roblox.com/v1/asset/?id=" + id + "&permissionContext=ignoreUniverse&xcachesplit=0",
+      responseType: "stream",
+      headers: {
+        'User-Agent': 'RobloxStudio/WinInet'
+      }
     }).then(function (response) {
       // progress bar stolen from i-forgot-where
       const filePath = path.join(__dirname, 'static/assets', id);
@@ -113,7 +116,13 @@ app.get("/v1/asset", (req, res) => {
       response.data.on('end', () => {
         process.stdout.write('\nDownload complete!\n');
       });
-    });
+    }).catch(function (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        res.status(error.response.status).send(error.response.data);
+      }
+    })
   }
 
   fs.readdir(`./static/assets/`, (err, files) => {
@@ -135,6 +144,32 @@ app.get("/v1/asset", (req, res) => {
 app.get("/v2/users/*/groups/roles", (req, res) => {
   res.send(JSON.stringify({ "data": [] }))
 })
+
+/// TELEMETRY
+
+// Used to send your MAC address to ROBLOX (TELEMETRY)
+app.get("/game/validate-machine", (req, res) => {
+  res.send(JSON.stringify({ "success": true, "message": "" }))
+})
+// Just sends info about studio (TELEMETRY)
+app.get("/studio/pbe", (req, res) => {
+  res.send({})
+})
+// Used to send statistics on how long something took to load
+app.get("/v1.0/SequenceStatistics/BatchAddToSequencesV2", (req, res) => {
+  res.send(JSON.stringify({ "Version": "1.1", "Content": { "Headers": [] }, "StatusCode": "OK", "ReasonPhrase": "OK", "Headers": [], "TrailingHeaders": [], "RequestMessage": null, "IsSuccessStatusCode": true }))
+})
+
+// Check client version
+app.get("/v2/client-version/WindowsStudio64", (req, res) => {
+  res.send(JSON.stringify({ "version": "0.635.0.6350588", "clientVersionUpload": "version-258fa44b42074cfc", "bootstrapperVersion": "1, 6, 0, 6350588" }))
+})
+
+// Check if you're banned
+app.get("/v1/not-approved", (req, res) => {
+  res.send(JSON.stringify({}))
+})
+
 
 inquirer.createPromptModule()(questions).then((answers) => {
   if (answers.mode === modes[0]) {
