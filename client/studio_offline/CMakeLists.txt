@@ -101,7 +101,7 @@ endif()
 ################################################################################
 if(CMAKE_VS_PLATFORM_NAME STREQUAL "x64")
     set(ADDITIONAL_LIBRARY_DEPENDENCIES
-        "../../depend_libs/minhook/libminhook"
+        "../depend_libs/minhook/libminhook"
     )
 endif()
 target_link_libraries(${PROJECT_NAME} PUBLIC "${ADDITIONAL_LIBRARY_DEPENDENCIES}")
