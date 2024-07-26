@@ -159,12 +159,6 @@ app.get("/studio/pbe", (req, res) => {
 app.get("/v1.0/SequenceStatistics/BatchAddToSequencesV2", (req, res) => {
   res.send(JSON.stringify({ "Version": "1.1", "Content": { "Headers": [] }, "StatusCode": "OK", "ReasonPhrase": "OK", "Headers": [], "TrailingHeaders": [], "RequestMessage": null, "IsSuccessStatusCode": true }))
 })
-
-// Check client version
-app.get("/v2/client-version/WindowsStudio64", (req, res) => {
-  res.send(JSON.stringify({ "version": "0.635.0.6350588", "clientVersionUpload": "version-258fa44b42074cfc", "bootstrapperVersion": "1, 6, 0, 6350588" }))
-})
-
 // Check if you're banned
 app.get("/v1/not-approved", (req, res) => {
   res.send(JSON.stringify({}))
