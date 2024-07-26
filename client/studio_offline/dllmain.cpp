@@ -29,7 +29,6 @@ void hook_test(uint128_t* res, uintptr_t schema, uintptr_t host, uintptr_t path,
     const auto host_str = reinterpret_cast<const char*>(
         *reinterpret_cast<uintptr_t*>(host)
         );
-    printf("%s %s\n", host_str, path);
     const char* str = "localhost";
     const char* scheme_str = "http";
     *reinterpret_cast<uintptr_t*>(host) = reinterpret_cast<uintptr_t>(str);
