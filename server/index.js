@@ -118,9 +118,7 @@ app.get("/v1/asset", (req, res) => {
       });
     }).catch(function (error) {
       if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        res.status(error.response.status).send(error.response.data);
+        res.status(error.response.status).send();
       }
     })
   }
